@@ -2,32 +2,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>"oh hi"</title>
     <link rel="icon" type="image/png" sizes="32x32" href="images\mumeiWah32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images\mumeiWah16x16.png">
+
     <link rel="apple-touch-icon" href="images\mumeiload.png">
-    <title>"oh hi"</title>
+    <link rel="apple-touch-startup-image" href="images\mumeiWah32x32.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="oh hi">
+
     <link rel="stylesheet" href="styles.css">
+    <script src="main.js"></script>
+    <script src="fetch-stats-mumei.js"></script>
+
 </head>
 <body>
-    <script src="main.js"></script>
     <main>
         <header>
-            <h1 id="header" style="font-size: 8rem; font-weight: 400; margin-bottom: -10px;"><a href="https://www.youtube.com/@NanashiMumei">Mumei</a></h1>
+            <h1 id="header" style="font-size: 8rem; font-weight: 400; margin-bottom: -10px;"><a href="https://www.youtube.com/@NanashiMumei" target="_blank">Mumei</a></h1>
         </header>
+
         <div class="image-container">
             <img id="clickableImage" src="images\mumeiload.png" alt="Play hello" style="border-radius: 50%;">
         </div>
+
         <div class="card">
             <div id="subs">
                 <h2>Subscribers</h2>
-                <p>100,000,000</p>
+                <p id="subscriberCount">Loading...</p>
             </div>
-            <div class="divider"></div>
+            <div id="horizontalDivider" class="divider"></div>
             <div id="views">
                 <h2>Total Views</h2>
-                <p>1,000,000,000</p>
+                <p id="viewCount">Loading...</p>
             </div>
             <div class="clearfix"></div>
+        </div>
+
+        <div class="card" id="livestreamDisplay">
+            <p class="top-left-text">Title</p>
+            <img src="" class="card-image" alt="Image">
+            <p class="bottom-left-text">Date</p>
+            <a href="" class="button" target="_blank">Watch</a>
+        </div>
+
+        <div id="apiKeyInputContainer" class="card">
+            <input type="text" id="apiKeyInputBox" placeholder="Enter API Key~">
+            <button id="apiKeySubmitButton">Submit</button>
         </div>
     </main>
 </body>

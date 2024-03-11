@@ -4,6 +4,12 @@
     margin: 0;
     position: relative;
 }
+:root {
+    --mumei-background-color: rgb(145, 108, 100);
+    --mumei-card-color: rgb(200, 160, 110);
+    --mumei-text-color-dark: rgb(92, 42, 36);
+    --mumei-text-color-light: rgb(255, 215, 170);
+}
 .image-container {
     width: 200px;
     height: 200px;
@@ -22,8 +28,8 @@
 }
 body {
     margin: 0;
-    background-color: rgb(145, 108, 100);
-    color: rgb(255, 215, 170);
+    background-color: var(--mumei-background-color);
+    color: var(--mumei-text-color-light);
     text-align: center;
     font-family: Patrick Hand,Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
     text-rendering: optimizeLegibility;
@@ -41,16 +47,16 @@ h1 a:hover {
     border-radius: 0.8rem;
     padding: 2rem;
     padding-left: calc(2rem + 25px);
-    padding-left: calc(2rem + 25px);
+    padding-right: calc(2rem + 25px);
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: rgb(200, 160, 110);
+    background-color: var(--mumei-card-color);
     max-width: 40rem; /* Change max-width to adjust size */
-    margin: 30px auto;
+    margin: 15px auto;
     height: auto;
 }
 @media screen and (max-width: calc(40rem + 30px) ) {
     .card {
-        margin: 30px 15px;
+        margin: 15px 15px;
     }
 }
 @media screen and (max-width: calc(35rem) ) {
@@ -59,16 +65,18 @@ h1 a:hover {
         text-align: center;
         width: 100%; /* Make the headings occupy full width */
     }
+    #horizontalDivider {
+        display: none;
+    }
 }
 .card h2 {
     font-size: 3rem;
-    color: rgb(92, 42, 36);
+    color: var(--mumei-text-color-dark);
     margin-bottom: 10px;
 }
 .card p {
-    font-size: 2rem;
-    color: rgb(92, 42, 36);
-    line-height: 1.5;
+    font-size: 2.5rem;
+    color: var(--mumei-text-color-dark);
 }
 #subs {
     float: left;
@@ -81,12 +89,61 @@ h1 a:hover {
     display: table;
     clear: both;
 }
-.divider {
+#horizontalDivider {
     position: absolute;
     top: 20;
     bottom: 20;
     left: 50%; /* Position the divider in the middle */
     width: 2px; /* Set the width of the divider */
-    background-color: rgb(92, 42, 36); /* Choose the color of the divider */
+    background-color: var(--mumei-text-color-dark); /* Choose the color of the divider */
     transform: translateX(-50%);  /*Center the divider horizontally */
+}
+#apiKeySubmitButton {
+    background: var(--mumei-text-color-dark);
+    color: var(--mumei-text-color-light);
+    font-family: Patrick Hand,Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+    font-size: 1.5rem;
+    border-radius: 1rem;
+    padding: 5px 10px;
+}
+#apiKeyInputBox {
+    font-family: Patrick Hand,Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+    font-size: 1.5rem;
+    margin: .5rem;
+    border-radius: .4rem;
+    text-align: center;
+}
+
+#livestreamDisplay {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.card-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 0.8rem;
+}
+p.top-left-text {
+    margin-bottom: 5px;
+    font-size: 2rem;
+}
+p.bottom-left-text {
+    margin: 0;
+    margin-bottom: -2rem;
+    text-align: left;
+    font-size: 2rem;
+}
+.button {
+    max-width: fit-content;
+    padding: 6px 12px;
+    border-radius: 3px;
+    background-color: var(--mumei-text-color-dark);
+    color: var(--mumei-text-color-light);
+    text-decoration: none;
+    margin-left: auto; 
+    margin-right: 0;
+    display: block;
 }
