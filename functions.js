@@ -361,6 +361,9 @@ function updateAllChannelData() {
     for(let i = 0; i < channelNameList.length; i++){
         currentChannel = channelNameList[i];
         updateStreamPromise()
+            .then(() => {
+                resolve();
+            })
             .catch(error => {
                 console.error("Error updating all channel data:", error);
             });
