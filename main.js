@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() { //event listener to s
 });
 document.addEventListener("DOMContentLoaded", function() { //reload button listener
     document.getElementById("reloadButton").addEventListener("click", function() {
-        updateAllChannelData();
+        updateAll();
     });
 });
 document.addEventListener("DOMContentLoaded", function() { //event listener for input api key field & button
