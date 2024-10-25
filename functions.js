@@ -357,7 +357,16 @@ function updateAll() {
     console.log("updated all");
 }
 function updateAllChannelData() {
-    
+    let tempCurrentChannel = currentChannel;
+    for(let i = 0; i < channelNameList.length; i++){
+        currentChannel = channelNameList[i];
+        updateStreamPromise()
+            .catch(error => {
+                console.error("Error updating all channel data:", error);
+            });
+    }
+    currentChannel = tempCurrentChannel;
+    updateAllDisplays();
 }
 function fetchData() {
     return fetch('datatemplate.json')
